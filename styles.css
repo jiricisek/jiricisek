@@ -1,0 +1,123 @@
+/* Minimal elegant styles for wedding one-page */
+
+/* If you provide webfont files for "Le Jour Script", place them in a `fonts/` folder
+   and the @font-face below will attempt to load them. If not present the browser
+   will fall back to the next available script font. */
+@font-face{
+  font-family: 'Le Jour Script';
+  src: local('Le Jour Script'),
+       url('fonts/LeJourScript.woff2') format('woff2'),
+       url('fonts/LeJourScript.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --color-navy: #001073;
+  --color-beige: #efe6db;
+  --color-white: #faf6f1;
+  --max-width: 760px;
+  --nav-height: 72px;
+  --transition: 200ms ease;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Playfair Display', Georgia, serif;color:var(--color-navy);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--color-white)}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 1.25rem}
+
+/* Top navigation (semi-transparent, subtle) */
+.top-nav{position:fixed;top:0;left:0;right:0;background:rgba(250,246,241,0.78);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,16,115,0.06);z-index:100}
+.nav-inner{height:var(--nav-height);display:flex;align-items:center;justify-content:center}
+.nav-list{list-style:none;display:flex;gap:1.05rem;margin:0;padding:0;align-items:center}
+.nav-list a{color:var(--color-navy);text-decoration:none;font-size:0.95rem;letter-spacing:0.12em;padding:0.5rem;transition:color var(--transition),opacity var(--transition);white-space:nowrap}
+.nav-list a.cta{border:1px solid var(--color-navy);padding:0.45rem 0.9rem;border-radius:6px;font-weight:600;background:transparent}
+.nav-list a:hover,.nav-list a.active{opacity:0.9}
+
+main{margin-top:calc(var(--nav-height) + 18px)}
+
+.panel{padding:clamp(3rem,10vh,8rem) 0;scroll-margin-top:calc(var(--nav-height) + 12px);text-align:center}
+.panel--beige{background:var(--color-beige)}
+.panel--white{background:var(--color-white)}
+
+.names{font-family:'Le Jour Script','Parisienne','Great Vibes',cursive;font-size:clamp(2.2rem,8vw,5.2rem);margin:0;color:var(--color-navy);line-height:1;letter-spacing:0.01em;font-weight:400}
+
+/* Square placeholder that works on GitHub Pages and older browsers using padding-top trick */
+.photo-placeholder{width:clamp(200px,34vw,480px);margin:1.6rem auto 0;border:none;border-radius:14px;background:transparent;position:relative;overflow:hidden}
+.photo-placeholder::after{content:"";display:block;padding-top:100%}
+.photo-placeholder::before{content:"Místo pro fotografii";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(0,16,115,0.35);font-size:0.95rem;letter-spacing:0.12em;text-transform:uppercase;pointer-events:none}
+.photo-placeholder.has-image::before{display:none}
+.photo-placeholder img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+/* Accommodation image wrapper for rectangular image (1000x707) */
+.accom-image-wrapper{max-width:1000px;margin:1rem auto 0;text-align:center}
+.accom-image-inner{position:relative;display:block;width:100%}
+.accom-image-wrapper img{width:100%;height:auto;border-radius:12px;display:block}
+.download-btn{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.9);color:var(--color-navy);width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--transition),transform var(--transition);box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.download-btn:hover{background:#fff;transform:scale(1.1)}
+.download-btn svg{width:20px;height:20px}
+
+.collapsible{
+  /* Use max-height so JS can set explicit maxHeight values for smooth
+     open/close transitions (matches main.js expectations). */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 320ms ease, opacity 240ms ease;
+  will-change: max-height, opacity;
+}
+.collapsible.open{opacity:1;max-height:none}
+.copy-cta{margin-left:0.6rem;padding:0.38rem 0.6rem;font-size:0.9rem;border-radius:6px}
+.account-number{font-weight:700;font-size:1rem;display:inline-block;margin-right:0.5rem}
+.date{margin-top:0.85rem;margin-bottom:0.25rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;font-size:0.92rem}
+.subtitle{margin-top:0.8rem;color:var(--color-navy);letter-spacing:0.14em;text-transform:uppercase;font-size:0.95rem}
+
+.section-title{font-size:1.1rem;letter-spacing:0.22em;text-transform:uppercase;margin:0 0 1.25rem 0}
+.lead{max-width:68ch;margin:0 auto 1.25rem;color:rgba(0,16,115,0.9);line-height:1.7}
+.placeholder{opacity:0.95}
+
+.schedule-list{max-width:720px;margin:1rem auto 0;display:grid;gap:1.1rem 2rem;justify-items:start}
+.schedule-list .row{display:grid;grid-template-columns:100px 1fr;gap:0.75rem;align-items:start}
+.time{font-variant:small-caps;opacity:0.9;letter-spacing:0.18em;font-weight:600}
+.details{text-align:left}
+
+.list-clean{list-style:none;padding:0;margin:1rem 0 0;text-align:left;display:inline-block}
+.list-clean li{margin:0.45rem 0}
+
+.button-cta{display:inline-block;text-decoration:none;color:var(--color-navy);border:1px solid var(--color-navy);padding:0.6rem 1rem;border-radius:8px;transition:transform var(--transition),background var(--transition)}
+.button-cta:hover{transform:translateY(-2px);background:rgba(0,16,115,0.03)}
+.muted{color:rgba(0,16,115,0.8);font-size:0.95rem}
+
+@media (max-width:700px){
+  .nav-inner{justify-content:space-between}
+  .mobile-toggle{display:inline-flex;background:var(--color-beige);border:0;padding:0.45rem;border-radius:8px;align-items:center;justify-content:center;border:1px solid rgba(0,16,115,0.06)}
+  .hamburger{width:22px;height:2px;background:var(--color-navy);display:inline-block;position:relative;transition:background 180ms ease}
+  .hamburger::before,.hamburger::after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--color-navy);transition:transform 200ms ease,top 200ms ease,opacity 180ms ease}
+  .hamburger::before{top:-6px}
+  .hamburger::after{top:6px}
+  .mobile-toggle[aria-expanded="true"] .hamburger{background:transparent}
+  .mobile-toggle[aria-expanded="true"] .hamburger::before{transform:rotate(45deg);top:0}
+  .mobile-toggle[aria-expanded="true"] .hamburger::after{transform:rotate(-45deg);top:0}
+
+  .nav-list{gap:0.6rem}
+  .nav-list a{font-size:0.85rem;padding:0.35rem}
+  /* mobile: animate nav open/close with max-height + opacity */
+  .nav-list{
+    display:flex;flex-direction:column;gap:0.6rem;padding:0 1rem;margin:0;background:var(--color-white);position:absolute;left:0;right:0;top:var(--nav-height);border-bottom:1px solid rgba(0,16,115,0.06);z-index:99;align-items:center;
+    max-height:0;overflow:hidden;opacity:0;transition:max-height 360ms ease,opacity 260ms ease,padding 240ms ease;pointer-events:none
+  }
+  .nav-list.open{max-height:60vh;opacity:1;padding:0.6rem 1rem;pointer-events:auto}
+  .nav-list a{width:100%;text-align:center;border-top:1px solid rgba(0,16,115,0.03);white-space:nowrap}
+  .nav-list a.cta{margin:0.4rem 0}
+
+  .names{font-size:clamp(2rem,12vw,3.6rem)}
+  .schedule-list .row{grid-template-columns:92px 1fr}
+  .container{padding:0 1rem}
+  main{margin-top:calc(var(--nav-height) + 8px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+
+a:focus{outline:2px solid rgba(0,16,115,0.12);outline-offset:3px}

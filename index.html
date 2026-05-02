@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sylva & Jiří — Svatební web</title>
+    <meta name="description" content="Sylva & Jiří — Sobota, 15.8.2026 — Pastuška, Brod nad Dyjí" />
+    <!-- Google font substitutes for Free Serif / Le Jour Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-nav" role="navigation" aria-label="Hlavní navigace">
+      <div class="container nav-inner">
+        <button id="mobile-nav-toggle" class="mobile-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Otevřít menu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <nav id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="#hero">Úvod</a></li>
+            <li><a href="#location">Lokace</a></li>
+            <li><a href="#schedule">Harmonogram</a></li>
+            <li><a href="#gifts">Dary</a></li>
+            <li><a href="#accommodation">Ubytování</a></li>
+            <li><a href="#info">Praktické informace</a></li>
+            <li><a href="#rsvp" class="cta">RSVP</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="panel panel--white hero">
+        <div class="container">
+          <h1 class="names">Sylva &amp; Jiří</h1>
+          <p class="subtitle">Pastuška, Brod nad Dyjí</p>
+          <div class="photo-placeholder has-image" role="img" aria-label="Místo pro fotografii (poměr 1:1)">
+            <img src="date.png" alt="Datum svatby" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section id="welcome" class="panel panel--beige">
+        <div class="container">
+          <h2 class="section-title">Milí hosté</h2>
+          <p class="lead">srdečně vás zveme na naši svatbu.</p>
+          <p class="lead">Pokud jste ještě nevyplnili RSVP, prosím, učiňte tak co nejdříve.</p>
+        </div>
+      </section>
+
+      <section id="location" class="panel panel--white">
+        <div class="container">
+          <h2 class="section-title">Místo</h2>
+          <p class="lead">Celé svatební odpoledne proběhne na Pastušce v Brodu nad Dyjí.</p>
+          <p class="lead">Jak se tam dostat: z Brna směrem na Znojmo, sjezd na Brod nad Dyjí — následovat značení k Pastušce.</p>
+          <p class="lead">Adresa: Pastuška, Brod nad Dyjí, 671 02</p>
+          <p class="lead"><a href="https://maps.app.goo.gl/1vobES8obpuaojsZ9" target="_blank" rel="noopener noreferrer">Zobrazit na mapě</a></p>
+        </div>
+      </section>
+
+      <section id="schedule" class="panel panel--beige">
+        <div class="container">
+          <h2 class="section-title">Harmonogram svatebního odpoledne</h2>
+            
+
+          <div class="schedule-list">
+            <div class="row"><div class="time">13:00</div><div class="details">Příjezd hostů / Ubytování / Malé občerstvení</div></div>
+            <div class="row"><div class="time">14:00</div><div class="details">Obřad</div></div>
+            <div class="row"><div class="time">14:30</div><div class="details">Focení</div></div>
+            <div class="row"><div class="time">15:00</div><div class="details">Přípitek / Raut / Aperol Spritz bar / Prosecco bar</div></div>
+            <div class="row"><div class="time">16:00</div><div class="details">Krájení dortu</div></div>
+            <div class="row"><div class="time">16:45</div><div class="details">Degustace vín</div></div>
+            <div class="row"><div class="time">18:00</div><div class="details">První tanec / Raut / Hudba</div></div>
+            <div class="row"><div class="time">20:30</div><div class="details">Grilování</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gifts" class="panel panel--white">
+        <div class="container">
+          <h2 class="section-title">Dary</h2>
+          <p class="lead">Pokud byste nám chtěli věnovat dar, uvítáme příspěvek na naši svatbu.</p>
+          <p>
+            <button id="show-payment" class="button-cta" type="button" aria-expanded="false" aria-controls="payment-info">Zobrazit platební informace</button>
+          </p>
+
+          <div id="payment-info" class="lead muted collapsible" aria-hidden="true">
+            <p>Pro příspěvek prosím použijte následující číslo účtu:</p>
+            <p>
+              <span id="iban-text" class="account-number">Číslo účtu: 5492173073/0800</span>
+              <button id="copy-iban" class="button-cta copy-cta" type="button" aria-label="Kopírovat číslo účtu">Kopírovat</button>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accommodation" class="panel panel--beige">
+        <div class="container">
+          <h2 class="section-title">Ubytování</h2>
+
+          <p>
+            <button id="toggle-accom-image" class="button-cta" type="button" aria-expanded="false">Zobrazit blízká ubytování</button>
+          </p>
+
+          <div id="accom-image-container" class="accom-image-wrapper collapsible" aria-hidden="true">
+            <div class="accom-image-inner">
+              <img id="accom-image" src="ubytovani.png" alt="Mapa ubytování" loading="lazy" width="1000" height="707" />
+              <a href="ubytovani.png" download class="download-btn" title="Stáhnout mapu" aria-label="Stáhnout mapu ubytování">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="info" class="panel panel--white">
+        <div class="container">
+          <h2 class="section-title">Praktické informace</h2>
+          <p class="lead">
+            Parkování je zajištěno přímo u Pastušky.<br>
+            Většina aktivit bude probíhat na zahradě.<br>
+            Svatba bude v barvách béžová a tmavě modrá.<br>
+          </p>
+        </div>
+      </section>
+
+      <section id="rsvp" class="panel panel--beige">
+        <div class="container">
+          <h2 class="section-title">RSVP / Dotazník</h2>
+          <p class="lead">Potvrďte prosím svou účast a případné dietní omezení prostřednictvím formuláře.</p>
+          <p>
+            <a class="button-cta" href="https://forms.cloud.microsoft/e/8vtyNnnRJb" target="_blank" rel="noopener noreferrer">Vyplnit RSVP formulář</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
